@@ -2,4 +2,14 @@ http://blog.csdn.net/sidely/article/details/41807381
 1.link to github
 ssh-keygen -t rsa -C "xxx@gmail.com"
 ssh git@github.com
-2.
+2.git add
+git init
+git add readme.txt
+git commit -m "wrote a readme file"
+git status
+3.git revise
+git diff readme.txt 
+git add readme.txt
+git commit -m "add distributed"
+git log
+git log --pretty=oneline
