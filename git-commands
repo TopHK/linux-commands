@@ -38,6 +38,7 @@ git push origin master # 只要本地作了提交，就可以通过命令
 git checkout -b dev
 git checkout master # 切换分支
 git merge dev # 把dev分支的工作成果合并到master分支上
+git merge --no-ff -m "merged bug fix 101" issue-101
 git branch -d dev # 可以放心地删除dev分支
 查看分支：git branch
 创建分支：git branch <name>
@@ -48,6 +49,32 @@ git branch -d dev # 可以放心地删除dev分支
 git log --graph # 命令可以看到分支合并图
 it log --graph --pretty=oneline --abbrev-commit # 查看分支历史
 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
+11. 修复bug
+git stash # 可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作
+git checkout master
+git checkout -b issue-101
+git checkout dev
+git status
+git stash pop # 恢复的同时把stash内容也删了
+12. feature 分支
+git branch -D <name> # 强行删除还没有被合并的分支
+13. 多人协作
+git remote -v # 显示远程更详细的信息
+1.      首先，可以试图用git push origin branch-name推送自己的修改；
+2.      如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；
+3.      如果合并有冲突，则解决冲突，并在本地提交；
+4.      没有冲突或者解决掉冲突后，再用git push origin branch-name推送就能成功！
+14. 标签管理
+git tag v1.0
+git log --pretty=oneline --abbrev-commit
+git tag v0.9 6224937
+git show v0.9
+·        命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+·        git tag -a <tagname> -m"blablabla..."可以指定标签信息；
+·        git tag -s <tagname> -m"blablabla..."可以用PGP签名标签；
+·        命令git tag可以查看所有标签。
+git push origin --tags # 一次性推送全部尚未推送到远程的本地标签
+
 
 
 
