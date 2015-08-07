@@ -45,6 +45,8 @@ git branch -d dev # 可以放心地删除dev分支
 创建+切换分支：git checkout -b <name>
 合并某分支到当前分支：git merge <name>
 删除分支：git branch -d <name>
+git log --graph # 命令可以看到分支合并图
+it log --graph --pretty=oneline --abbrev-commit # 查看分支历史
 
 
 
