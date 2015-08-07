@@ -33,6 +33,8 @@ git rm test.txt
 git remote add origin git@github.com:michaelliao/learngit.git 
 git push -u origin master # 把本地库的所有内容推送到远程库上
 git push origin master # 只要本地作了提交，就可以通过命令
+9. git clone git@github.com:michaelliao/gitskills.git # git clone克隆一个本地库
+10.
 
 
 
